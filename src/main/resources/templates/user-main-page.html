@@ -5,6 +5,18 @@
     <title>Title</title>
 </head>
 <body>
-Users
+<h1>Dodaj nowego uzytkownika:</h1>
+<form action="/add-user" method="post">
+    <label>Nazwa uzytkownika:</label>
+    <input type="text" name="name">
+    <br>
+    <label>Płeć uzytkownika:</label>
+    <label>Kobieta</label>
+    <input type="radio" name="user_gender" value="female">
+    <label>Mezczyzna</label>
+    <input type="radio" name="user_gender" value="male">
+    <br>
+    <button type="submit">Dodaj uzytkownika</button>
+</form>
 </body>
 </html>
