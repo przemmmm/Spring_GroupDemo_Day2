@@ -4,11 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class MainController {
+public class TaskController {
 
-        @GetMapping("/start")
-        public String getStartPage() {
-            return "start-page";
-        }
+    @GetMapping("/task")
+    public String getTaskPage() {
+        return "task-main-page";
+    }
 
 }
