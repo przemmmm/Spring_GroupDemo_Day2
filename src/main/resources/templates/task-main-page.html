@@ -6,13 +6,21 @@
     <link rel="stylesheet" type="text/css" href="styles.css"/>
 </head>
 <body>
-  <h1>Wybierz kategorię zadania</h1>
+<h1>Dodaj nowe zadanie:</h1>
+<label>Twój staż pracy: ...</label>
+<form action="/task" method="post">
 
-  <ul>
-      <li><a href="/studying">Nauka</a></li>
-      <li><a href="/cleaning-inhouse">Sprzątanie domu</a></li>
-      <li><a href="/cleaning-outhouse">Sprzątanie ogródka</a></li>
-  </ul>
+    <label>Tytuł zadania:</label>
+    <input type="text" th:field="${request.title}">
+    <label>Kategoria zadania:</label>
+    <input type="text" th:field="${request.type}">
+    <label>Poziom trudności:</label>
+    <input type="number" th:field="${request.level}">
+    <label>Osoba odpowiedzialna:</label>
+    <input type="text" th:field="${request.name}">
+
+
+    <button type="submit">Dodaj zadanie</button>
 
 </body>
 </html>

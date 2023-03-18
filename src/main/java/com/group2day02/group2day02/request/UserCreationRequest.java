@@ -4,11 +4,11 @@ public class UserCreationRequest {
 
     private String name;
     private String gender;
-
-    public UserCreationRequest(String name, String gender) {
+    private int seniority;
+    public UserCreationRequest(String name, String gender, int seniority) {
         this.name = name;
         this.gender = gender;
-
+        this.seniority = seniority;
     }
 
     public String getName() {
@@ -19,11 +19,16 @@ public class UserCreationRequest {
         return gender;
     }
 
+    public int getSeniority() {
+        return seniority;
+    }
+
     @Override
     public String toString() {
         return "UserCreationRequest{" +
                 "name='" + name + '\'' +
                 ", gender='" + gender + '\'' +
+                ", seniority=" + seniority +
                 '}';
     }
 }
