@@ -27,4 +27,20 @@ public class TaskEntity {
     public String getTitle() {
         return title;
     }
+
+    public Long getTaskId() {
+        return taskId;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public String getName() {
+        return name;
+    }
 }

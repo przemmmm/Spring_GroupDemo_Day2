@@ -7,8 +7,18 @@
 
 <body>
 <h1>Znalezione zadania</h1>
-<div th:each="planet : ${tasks}">
-    <div th:text="${planet.title}"></div>
+
+<form action="/find-task" method="post">
+    <label>Wybierz poziom trudnosci zadania:</label>
+    <label>Łatwe</label>
+    <input type="radio" th:field="${request.level}" value="3">
+    <label>Trudne</label>
+    <input type="radio" th:field="${request.level}" value="8">
+    <button type="submit">Filtruj</button>
+</form>
+
+<div th:each="task : ${tasks}">
+    <div th:text="${task.title}"></div>
 </div>
 </body>
 </html>

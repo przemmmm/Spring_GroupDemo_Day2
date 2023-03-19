@@ -20,4 +20,8 @@ public class UserEntity {
         this.gender = gender;
         this.seniority = seniority;
     }
+
+    public String getName() {
+        return name;
+    }
 }
