@@ -53,7 +53,7 @@ public class UsersController {
     }
 
     @PostMapping("find-user")
-    public String filteredFindTaskPade(@ModelAttribute("request") UserFilterRequest userFilterRequest, Model model){
+    public String filteredFindUserPage(@ModelAttribute("request") UserFilterRequest userFilterRequest, Model model){
         List<UserResponse> users = userService.getUsers(userFilterRequest);
         model.addAttribute("users", users);
         return "find-user";
