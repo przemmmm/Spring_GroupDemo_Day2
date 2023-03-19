@@ -51,10 +51,10 @@ public class TaskController {
         return "find-task";
     }
 
-    @PostMapping("find-planet")
+    @PostMapping("find-task")
     public String filteredFindTaskPade(@ModelAttribute("request") TaskFilterRequest taskFilterRequest){
         System.out.println(taskFilterRequest);
-        return "find-planet";
+        return "find-task";
     }
 
 }

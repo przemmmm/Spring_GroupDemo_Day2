@@ -6,6 +6,16 @@
 </head>
 <body>
 <h1>Znalezione zadania</h1>
+
+<form action="/find-user" method="post">
+    <label>Wybierz płeć osoby:</label>
+    <label>Kobieta</label>
+    <input type="radio" th:field="${request.gender}" value="female">
+    <label>Mężczyzna</label>
+    <input type="radio" th:field="${request.gender}" value="male">
+    <button type="submit">Filtruj</button>
+</form>
+<br>
 <div th:each="user : ${users}">
     <div th:text="${user.name}"></div>
 </body>

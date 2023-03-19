@@ -24,4 +24,12 @@ public class UserEntity {
     public String getName() {
         return name;
     }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public int getSeniority() {
+        return seniority;
+    }
 }
