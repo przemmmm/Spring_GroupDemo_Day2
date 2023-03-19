@@ -1,7 +1,7 @@
 package com.group2day02.group2day02.entity;
 
 import jakarta.persistence.*;
-import jdk.jfr.Enabled;
+
 
 @Entity
 @Table(name = "tasks")
@@ -22,5 +22,9 @@ public class TaskEntity {
         this.type = type;
         this.level = level;
         this.name = name;
+    }
+
+    public String getTitle() {
+        return title;
     }
 }

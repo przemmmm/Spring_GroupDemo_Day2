@@ -42,8 +42,9 @@ public class TaskController {
     }
 
     @GetMapping("find-task")
-    public String getFindTaskPage(){
-//        List<TaskEntity> taskService.getAllTasks();
+    public String getFindTaskPage(Model model){
+        List<TaskEntity> tasks = taskService.getAllTasks();
+        model.addAttribute("tasks", tasks);
         return "find-task";
     }
 

@@ -7,6 +7,8 @@
 
 <body>
 <h1>Znalezione zadania</h1>
-...
+<div th:each="planet : ${tasks}">
+    <div th:text="${planet.title}"></div>
+</div>
 </body>
 </html>

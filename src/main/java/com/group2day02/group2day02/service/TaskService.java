@@ -8,7 +8,10 @@ import com.group2day02.group2day02.request.UserCreationRequest;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
+@Transactional
 public class TaskService {
 
     private TaskRepository taskRepository;
@@ -16,7 +19,7 @@ public class TaskService {
     public TaskService(TaskRepository taskRepository) {
         this.taskRepository = taskRepository;
     }
-    @Transactional
+
     public void addTask(TaskCreationRequest taskCreationRequest) {
         if (taskCreationRequest.getTitle().isBlank()) {
             throw new UserServiceException("Nie podano tytułu zadania!");
@@ -29,4 +32,10 @@ public class TaskService {
                 taskCreationRequest.getName());
         taskRepository.save(taskEntity);
     }
+
+    public List<TaskEntity> getAllTasks(){
+        List<TaskEntity> tasks = taskRepository.findAll();
+        return tasks;
+    }
+
 }
