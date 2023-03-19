@@ -4,7 +4,9 @@ import com.group2day02.group2day02.entity.TaskEntity;
 import com.group2day02.group2day02.exception.TaskServiceException;
 import com.group2day02.group2day02.request.TaskCreationRequest;
 import com.group2day02.group2day02.request.TaskFilterRequest;
+import com.group2day02.group2day02.request.UserFilterRequest;
 import com.group2day02.group2day02.response.TaskResponse;
+import com.group2day02.group2day02.response.UserResponse;
 import com.group2day02.group2day02.service.TaskService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -57,4 +59,10 @@ public class TaskController {
         return "find-task";
     }
 
+    @PostMapping("find-task")
+    public String filteredFindTaskPage(@ModelAttribute("request") TaskFilterRequest taskFilterRequest, Model model) {
+//        List<TaskResponse> tasks = taskService.getTask(taskFilterRequest);
+//        model.addAttribute("tasks", tasks);
+        return "find-user";
+    }
 }

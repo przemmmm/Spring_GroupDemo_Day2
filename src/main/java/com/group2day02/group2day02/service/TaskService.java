@@ -4,7 +4,10 @@ import com.group2day02.group2day02.entity.TaskEntity;
 import com.group2day02.group2day02.exception.UserServiceException;
 import com.group2day02.group2day02.repository.TaskRepository;
 import com.group2day02.group2day02.request.TaskCreationRequest;
+import com.group2day02.group2day02.request.TaskFilterRequest;
+import com.group2day02.group2day02.request.UserFilterRequest;
 import com.group2day02.group2day02.response.TaskResponse;
+import com.group2day02.group2day02.response.UserResponse;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
@@ -37,6 +40,11 @@ public class TaskService {
         return taskRepository.findAll().stream()
                 .map(taskEntity -> new TaskResponse(taskEntity.getTitle(), taskEntity.getType(), taskEntity.getLevel(), taskEntity.getName()))
                 .toList();
+    }
+
+    public List<TaskResponse> getTask(TaskFilterRequest taskFilterRequest){
+        return taskRepository.findTopByLevel(taskFilterRequest.getLevel()).stream()
+                .map(taskEntity-> new TaskResponse(taskEntity.))
     }
 
 }
