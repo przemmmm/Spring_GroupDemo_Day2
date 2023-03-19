@@ -4,11 +4,14 @@ import com.group2day02.group2day02.entity.TaskEntity;
 import com.group2day02.group2day02.exception.UserServiceException;
 import com.group2day02.group2day02.repository.TaskRepository;
 import com.group2day02.group2day02.request.TaskCreationRequest;
-import com.group2day02.group2day02.request.UserCreationRequest;
+import com.group2day02.group2day02.response.TaskResponse;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
+@Transactional
 public class TaskService {
 
     private TaskRepository taskRepository;
@@ -16,7 +19,7 @@ public class TaskService {
     public TaskService(TaskRepository taskRepository) {
         this.taskRepository = taskRepository;
     }
-    @Transactional
+
     public void addTask(TaskCreationRequest taskCreationRequest) {
         if (taskCreationRequest.getTitle().isBlank()) {
             throw new UserServiceException("Nie podano tytułu zadania!");
@@ -29,4 +32,11 @@ public class TaskService {
                 taskCreationRequest.getName());
         taskRepository.save(taskEntity);
     }
+
+    public List<TaskResponse> getAllTasks(){
+        return taskRepository.findAll().stream()
+                .map(taskEntity -> new TaskResponse(taskEntity.getTitle(), taskEntity.getType(), taskEntity.getLevel(), taskEntity.getName()))
+                .toList();
+    }
+
 }
