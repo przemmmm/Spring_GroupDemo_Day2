@@ -1,5 +1,6 @@
 package com.group2day02.group2day02.controller;
 
+import com.group2day02.group2day02.entity.TaskEntity;
 import com.group2day02.group2day02.exception.TaskServiceException;
 import com.group2day02.group2day02.request.TaskCreationRequest;
 import com.group2day02.group2day02.service.TaskService;
@@ -8,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
 
 @Controller
 public class TaskController {
@@ -36,6 +39,12 @@ public class TaskController {
             model.addAttribute("message", e.getMessage());
         }
         return "start-page";
+    }
+
+    @GetMapping("find-task")
+    public String getFindTaskPage(){
+//        List<TaskEntity> taskService.getAllTasks();
+        return "find-task";
     }
 
 }
