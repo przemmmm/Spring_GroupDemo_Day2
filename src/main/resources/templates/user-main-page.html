@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>User main page</title>
 </head>
 <body>
 <h1>Dodaj nowego uzytkownika:</h1>
-<form action="/add-user" method="post">
+<form action="/user" method="post">
     <label>Nazwa uzytkownika:</label>
     <input type="text" name="name">
     <br>
@@ -15,6 +15,8 @@
     <input type="radio" name="user_gender" value="female">
     <label>Mezczyzna</label>
     <input type="radio" name="user_gender" value="male">
+    <label>Staż pracy: </label>
+    <input type="number" name="size">
     <br>
     <button type="submit">Dodaj uzytkownika</button>
 </form>
